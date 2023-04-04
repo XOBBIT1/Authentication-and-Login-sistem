@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+pyjwt = "*"
+sqlalchemy = "*"
+python-dotenv = "*"
+passlib = "*"
+psycopg2 = "*"
+uvicorn = "*"
+asyncpg = "*"
+aiosqlite = "*"
+fastapi-users = {extras = ["sqlalchemy"], version = "*"}
+fastapi-mail = "*"
+alembic = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
