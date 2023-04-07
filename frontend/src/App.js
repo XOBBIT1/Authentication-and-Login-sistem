@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './App.css';
 import { Login } from "./Login";
 import { Register } from "./Register";
+import { Verify } from './Verify';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [currentForm, setCurrentFrom] = useState('login');
@@ -13,8 +16,15 @@ function App() {
   return (
     <div className="App">
       {
-        currentForm === "login" ? <Login onFormSwitch={toggleForm}/> : <Register onFormSwitch={toggleForm}/>
+        currentForm === "login" ? (
+          <Login onFormSwitch={toggleForm}/> 
+        ) : currentForm === "register" ? (
+          <Register onFormSwitch={toggleForm}/> 
+        ) : (
+          <Verify onFormSwitch={toggleForm}/> 
+        )
       }
+      <ToastContainer />
     </div>
   );
 }

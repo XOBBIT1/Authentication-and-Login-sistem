@@ -41,3 +41,18 @@ button {
   text-decoration: underline;
 }
 
+
+.token_input{
+  margin: 0.5rem 0;
+  padding:  1rem;
+  border-radius: 5px;
+  width: 1000px;
+}
+
+.verify-btn{
+  border: none;
+  background-color: #828282;
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+}
