@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 
-const Verify = (props) => {
-    const [pass, setPass] = useState('');
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+export const Verify = (props) => {
+    const [verify, setToken] = useState('');
 
     const handleSubmit = (event) =>{
         event.preventDefault();
@@ -10,13 +14,12 @@ const Verify = (props) => {
     return ( 
         <div>
              <form className="login-form" onSubmit={handleSubmit}>
-                <label form="password">password</label>
-                <input value={pass} onChange={(event) => setPass(event.target.value)} typr="password" placeholder="*******" id="password" name="password" />
-                <button types="submit">Confirm Account</button>
+                <label form="token">token</label>
+                <input className="token_input" value={verify} onChange={(event) => setToken(event.target.value)} typr="token" placeholder="your token" id="verify" name="verify" />
+                <button className="verify-btn" types="submit">Confirm Account</button>
+                <button className="link-btn" onClick={() => props.onFormSwitch('login')}>Go to Login</button>
             </form>
-            <button className="link-btn" onClick={() => props.onFormSwitch('register')}>Don't have an account? Register her!</button>
+            <ToastContainer/>
         </div>
     )
 }
-
-export default Verify;
