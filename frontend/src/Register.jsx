@@ -7,7 +7,7 @@ export const Register = (props) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [name, setName] = useState('');
-    const [modalActive, setModelActive] = useState(true);
+    const [modalActive, setModelActive] = useState(false);
 
     const handleSubmit = (event) =>{
         event.preventDefault();
@@ -26,7 +26,7 @@ export const Register = (props) => {
                 <label htmlFor="password">password</label>
                 <input value={pass} onChange={(event) => setPass(event.target.value)} typr="password" placeholder="*******" id="password" name="password" />
                 <ReCAPTCHA sitekey="6Lc95F8lAAAAAHHxbFKDrp2nXl3c3QMBEM-X-ISk" onChange={onChange}/>
-                <button types="submit" onClick={() => setModelActive(true)}>Registrate</button>
+                <button types="submit" className="open-btn" onClick={() => setModelActive(true)}>Registrate</button>
             </form>
             <button className="link-btn" onClick={() => props.onFormSwitch('login')}>Already have an account? Loging here!</button>
             <Modal active={modalActive} setActive={setModelActive}>

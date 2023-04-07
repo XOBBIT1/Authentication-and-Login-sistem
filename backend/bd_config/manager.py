@@ -23,7 +23,7 @@ class UserManager(IntegerIDMixin, BaseUserManager[User, int]):
 
     async def on_after_request_verify(
             self, user: User, token: str, request: Optional[Request] = None):
-        send_mail(user.email, f"You registered successfully! You need to verify! Here is your token:{token}")
+        send_mail(user.email, f"You registered successfully! You need to verify!")
         print(f"Verification requested for user {user.id}. Verification token: {token}")
         return token
 
@@ -60,27 +60,6 @@ class UserManager(IntegerIDMixin, BaseUserManager[User, int]):
         await self.on_after_register(created_user, request)
 
         return created_user
-
-    async def request_verify(
-        self, user: models.UP, request: Optional[Request] = None
-    ) -> None:
-        if not user.is_active:
-            raise exceptions.UserInactive()
-        if user.is_verified:
-            raise exceptions.UserAlreadyVerified()
-
-        token_data = {
-            "sub": str(user.id),
-            "email": user.email,
-            "aud": self.verification_token_audience,
-        }
-        token = generate_jwt(
-            token_data,
-            self.verification_token_secret,
-            self.verification_token_lifetime_seconds,
-        )
-        send_mail(user.email, f"You registered successfully! You need to verify! Here is your token:{token}")
-        await self.on_after_request_verify(user, token, request)
 
 
 async def get_user_manager(user_db=Depends(get_user_db)):

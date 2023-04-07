@@ -15,4 +15,3 @@ class UserCreate(schemas.CreateUpdateDictModel):
     username: str
     email: str
     password: str
-    role_id: int
