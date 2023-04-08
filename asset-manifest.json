@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Authentication-and-Login-sistem/static/css/main.8813799e.css",
+    "main.js": "/Authentication-and-Login-sistem/static/js/main.fca084d7.js",
+    "static/js/787.cda612ba.chunk.js": "/Authentication-and-Login-sistem/static/js/787.cda612ba.chunk.js",
+    "index.html": "/Authentication-and-Login-sistem/index.html",
+    "main.8813799e.css.map": "/Authentication-and-Login-sistem/static/css/main.8813799e.css.map",
+    "main.fca084d7.js.map": "/Authentication-and-Login-sistem/static/js/main.fca084d7.js.map",
+    "787.cda612ba.chunk.js.map": "/Authentication-and-Login-sistem/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8813799e.css",
+    "static/js/main.fca084d7.js"
+  ]
+}
