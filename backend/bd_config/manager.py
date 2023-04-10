@@ -30,7 +30,6 @@ class UserManager(IntegerIDMixin, BaseUserManager[User, int]):
     async def on_after_verify(
         self, user: User, request: Optional[Request] = None
     ):
-        send_mail(user.email, f"You verified successfully!")
         print(f"User {user.id} has been verified")
 
     async def create(
