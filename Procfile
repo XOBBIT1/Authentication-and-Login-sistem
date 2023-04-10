@@ -1,1 +1,1 @@
-web: uvicorn backend.main:app
+web:PIPENV_PIPFILE=./backend/Pipfile pipenv run uvicorn backend.main:app
