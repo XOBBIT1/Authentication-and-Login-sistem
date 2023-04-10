@@ -16,6 +16,7 @@ aiosqlite = "*"
 fastapi-users = {extras = ["sqlalchemy"], version = "*"}
 fastapi-mail = "*"
 alembic = "*"
+gunicorn = "*"
 
 [dev-packages]
 
