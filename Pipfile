@@ -4,7 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-fastapi = "*"
 pyjwt = "*"
 sqlalchemy = "*"
 python-dotenv = "*"
@@ -17,6 +16,7 @@ fastapi-users = {extras = ["sqlalchemy"], version = "*"}
 fastapi-mail = "*"
 alembic = "*"
 gunicorn = "*"
+fastapi = "*"
 
 [dev-packages]
 

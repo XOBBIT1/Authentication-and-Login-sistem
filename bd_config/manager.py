@@ -2,7 +2,6 @@ from typing import Optional
 
 from fastapi import Depends, Request
 from fastapi_users import BaseUserManager, IntegerIDMixin, models, schemas, exceptions
-from fastapi_users.jwt import generate_jwt
 
 
 from bd_config.database_config import User, get_user_db
