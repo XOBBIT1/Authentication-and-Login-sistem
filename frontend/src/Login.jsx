@@ -25,14 +25,16 @@ export const Login = (props) => {
 
     return (
         <div className="auth-form-container">
+            <h2 className="name-of-bocks">LOGIN</h2>
+            <div className="chose-user">
+                <button className="link-btn" onClick={() => props.onFormSwitch('login')}>LOGIN</button>
+                <button className="link-btn" onClick={() => props.onFormSwitch('register')}>REGISTRATION</button>
+            </div>
             <form className="login-form" onSubmit={handleSubmit}>
-                <label form="email">email</label>
-                <input value={email} onChange={(event) => setEmail(event.target.value)} typr="email" placeholder="youremail@gmail.com" id="email" name="email" />
-                <label form="password">password</label>
-                <input value={pass} onChange={(event) => setPass(event.target.value)} typr="password" placeholder="*******" id="password" name="password" />
+                <input value={email} onChange={(event) => setEmail(event.target.value)} typr="email" placeholder="loggin" id="email" name="email" />
+                <input value={pass} onChange={(event) => setPass(event.target.value)} typr="password" placeholder="password" id="password" name="password" />
                 <button types="submit" onClick={notify}>Login</button>
             </form>
-            <button className="link-btn" onClick={() => props.onFormSwitch('register')}>Don't have an account? Register her!</button>
         </div>
     )
 }
